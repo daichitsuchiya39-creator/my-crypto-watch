@@ -43,7 +43,7 @@ export default function RelativeStrengthChart({ data, highlightSymbol }: Relativ
           />
           <ReferenceLine x={0} stroke="#64748b" />
           <Tooltip
-            formatter={(value: number) => [`${value.toFixed(2)}%`, "RPD"]}
+            formatter={(value?: number) => [`${(value ?? 0).toFixed(2)}%`, "RPD"]}
             contentStyle={{ background: "#0f172a", border: "1px solid #334155", color: "#e2e8f0" }}
           />
           <Bar dataKey="rpd" radius={[0, 8, 8, 0]}>
@@ -61,9 +61,10 @@ export default function RelativeStrengthChart({ data, highlightSymbol }: Relativ
             <LabelList
               dataKey="rpd"
               position="right"
-              formatter={(value: number) =>
-                value === 0 ? "基準" : value > 0 ? "推しが強い" : "推しが弱い"
-              }
+              formatter={(value) => {
+                const v = typeof value === "number" ? value : 0;
+                return v === 0 ? "基準" : v > 0 ? "推しが強い" : "推しが弱い";
+              }}
               fill="#e2e8f0"
               fontSize={11}
             />
