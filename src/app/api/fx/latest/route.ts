@@ -10,14 +10,14 @@ const SNAPSHOT_PATH = path.join("/tmp", "my-crypto-watch-fx-snapshots.json");
 const MAX_DAYS = 120;
 
 const CURRENCY_NAMES: Record<string, string> = {
-  USD: "米ドル",
-  EUR: "ユーロ",
-  JPY: "日本円",
-  GBP: "英ポンド",
-  AUD: "豪ドル",
-  CAD: "カナダドル",
-  CHF: "スイスフラン",
-  CNY: "中国元",
+  USD: "US Dollar",
+  EUR: "Euro",
+  JPY: "Japanese Yen",
+  GBP: "British Pound",
+  AUD: "Australian Dollar",
+  CAD: "Canadian Dollar",
+  CHF: "Swiss Franc",
+  CNY: "Chinese Yuan",
 };
 
 const TIMEFRAMES = {

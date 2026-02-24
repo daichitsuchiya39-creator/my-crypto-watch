@@ -30,32 +30,32 @@ export function calcWeightedComposite(strength: Omit<MultiTimeframeStrength, "co
 
 export function getStrengthDescriptor(score: number): StrengthDescriptor {
   let rank: StrengthRank = "neutral";
-  let label = "中立";
+  let label = "Neutral";
   let color = "#64748b";
 
   if (score >= 20) {
     rank = "extremely-strong";
-    label = "極めて強い";
+    label = "Extremely Strong";
     color = "#ef4444";
   } else if (score >= 10) {
     rank = "strong";
-    label = "強い";
+    label = "Strong";
     color = "#f97316";
   } else if (score >= 3) {
     rank = "moderately-strong";
-    label = "やや強い";
+    label = "Moderately Strong";
     color = "#10b981";
   } else if (score <= -20) {
     rank = "extremely-weak";
-    label = "極めて弱い";
+    label = "Extremely Weak";
     color = "#7c3aed";
   } else if (score <= -10) {
     rank = "weak";
-    label = "弱い";
+    label = "Weak";
     color = "#3b82f6";
   } else if (score <= -3) {
     rank = "moderately-weak";
-    label = "やや弱い";
+    label = "Moderately Weak";
     color = "#38bdf8";
   }
 

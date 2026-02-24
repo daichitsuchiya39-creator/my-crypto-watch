@@ -37,10 +37,10 @@ export default function Home() {
     : benchmarkCoins;
 
   const formattedUpdate = lastUpdated
-    ? new Intl.DateTimeFormat("ja-JP", {
+    ? new Intl.DateTimeFormat("en-US", {
         dateStyle: "medium",
         timeStyle: "short",
-        timeZone: "Asia/Tokyo",
+        timeZone: "UTC",
       }).format(lastUpdated)
     : "-";
 
@@ -55,13 +55,13 @@ export default function Home() {
           </div>
         )}
 
-        {/* Hero: 推しコイン入力 */}
+        {/* Hero: coin selection */}
         <section className="flex flex-col items-center gap-6">
           <CoinSelector coins={listings} selected={oshiCoin} onSelect={setOshiCoin} />
           {oshiCoin && <CoinCard coin={oshiCoin} />}
         </section>
 
-        {/* ベンチマーク設定 */}
+        {/* Benchmark settings */}
         <section>
           <BenchmarkSelector
             coins={listings}
@@ -77,10 +77,10 @@ export default function Home() {
           <div className="panel-border flex flex-col justify-between rounded-2xl bg-slate-950/70 p-5">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                現在の時間軸
+                Current Timeframe
               </p>
               <p className="text-lg font-semibold text-white">{selectedTimeframe.toUpperCase()}</p>
-              <p className="text-sm text-slate-400">チャートとテーブルに反映されます</p>
+              <p className="text-sm text-slate-400">Applied to charts and table</p>
             </div>
             <div className="mt-4">
               <TimeframeToggle selected={selectedTimeframe} onChange={setSelectedTimeframe} />
@@ -90,7 +90,7 @@ export default function Home() {
 
         {isLoading ? (
           <div className="panel-border rounded-2xl bg-slate-950/70 p-6 text-sm text-slate-300">
-            データを取得しています...
+            Loading data...
           </div>
         ) : (
           <section className="grid gap-6">
@@ -105,9 +105,9 @@ export default function Home() {
 
         <section className="flex flex-wrap items-center justify-between gap-4 text-sm text-slate-400">
           <div>
-            最終更新: {formattedUpdate} JST
+            Last updated: {formattedUpdate} UTC
             <span className="ml-3 inline-flex items-center gap-2 rounded-full bg-slate-800/70 px-3 py-1 text-xs text-slate-300">
-              キャッシュ: 5分
+              Cache: 5 min
             </span>
           </div>
           <button
@@ -115,14 +115,14 @@ export default function Home() {
             onClick={refresh}
             className="rounded-full border border-emerald-400/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200 transition hover:bg-emerald-500/10"
           >
-            更新
+            Refresh
           </button>
         </section>
 
         <section className="rounded-2xl border border-slate-800/80 bg-slate-950/60 px-4 py-3 text-xs text-slate-400">
-          本アプリは投資助言を目的としたものではありません。情報は参考としてご利用ください。
+          This app is for informational purposes only and does not constitute investment advice.
           <span className="mt-2 block text-slate-500">
-            データ取得元:{" "}
+            Data source:{" "}
             <a
               href="https://pro-api.coinmarketcap.com/"
               target="_blank"

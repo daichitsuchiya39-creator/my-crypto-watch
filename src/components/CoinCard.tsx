@@ -15,11 +15,11 @@ export default function CoinCard({ coin }: CoinCardProps) {
           {coin.name} <span className="text-amber-400">{coin.symbol}</span>
         </p>
         {"kind" in coin && coin.kind === "fiat" && (
-          <p className="text-xs text-slate-500">法定通貨</p>
+          <p className="text-xs text-slate-500">Fiat Currency</p>
         )}
       </div>
       <div className="text-right">
-        <p className="text-xs text-slate-400">現在価格</p>
+        <p className="text-xs text-slate-400">Current Price</p>
         <p className="text-lg font-semibold text-white">¥{price.toLocaleString()}</p>
       </div>
     </div>

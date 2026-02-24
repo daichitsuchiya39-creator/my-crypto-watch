@@ -16,7 +16,7 @@ export default function StrengthGauge({ score, descriptor }: StrengthGaugeProps)
       <div className="flex items-center justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-            総合相対強度ゲージ
+            Composite Relative Strength
           </p>
           <p className="text-lg font-semibold text-white">{descriptor.label}</p>
         </div>

@@ -26,9 +26,9 @@ export default function RelativeStrengthChart({ data, highlightSymbol }: Relativ
       <div className="mb-4 flex items-center justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-            相対強度バーチャート
+            Relative Strength Bar Chart
           </p>
-          <p className="text-sm text-slate-300">推しコインを基準に比較対象との差分を表示</p>
+          <p className="text-sm text-slate-300">Shows the performance gap between your coin and benchmarks</p>
         </div>
       </div>
       <ResponsiveContainer width="100%" height="100%">
@@ -63,7 +63,7 @@ export default function RelativeStrengthChart({ data, highlightSymbol }: Relativ
               position="right"
               formatter={(value) => {
                 const v = typeof value === "number" ? value : 0;
-                return v === 0 ? "基準" : v > 0 ? "推しが強い" : "推しが弱い";
+                return v === 0 ? "Baseline" : v > 0 ? "Outperforming" : "Underperforming";
               }}
               fill="#e2e8f0"
               fontSize={11}

@@ -6,11 +6,11 @@ import { MarketAsset, PresetType } from "@/lib/types";
 
 const PRESET_LABELS: Record<PresetType, string> = {
   top10: "Top 10",
-  layer1: "レイヤー1",
+  layer1: "Layer 1",
   defi: "DeFi",
-  meme: "ミームコイン",
-  fxmajors: "主要法定通貨",
-  custom: "カスタム",
+  meme: "Meme Coins",
+  fxmajors: "Major FX",
+  custom: "Custom",
 };
 
 interface BenchmarkSelectorProps {
@@ -54,7 +54,7 @@ export default function BenchmarkSelector({
   return (
     <div className="space-y-3">
       <label className="block text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-        比較対象グループ
+        Benchmark Group
       </label>
       <div className="grid gap-2 sm:grid-cols-2">
         {Object.entries(PRESET_LABELS).map(([key, label]) => (
@@ -77,8 +77,8 @@ export default function BenchmarkSelector({
         <div className="panel-border rounded-2xl bg-slate-950/70 p-4">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm font-semibold text-white">カスタム銘柄</p>
-              <p className="text-xs text-slate-400">最大15銘柄まで選択可能</p>
+              <p className="text-sm font-semibold text-white">Custom Assets</p>
+              <p className="text-xs text-slate-400">Select up to 15 assets</p>
             </div>
             <span className="text-xs text-slate-400">{customSelection.length} / 15</span>
           </div>

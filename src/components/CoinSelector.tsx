@@ -30,7 +30,7 @@ export default function CoinSelector({ coins, selected, onSelect }: CoinSelector
     <div className="relative mx-auto w-full max-w-2xl">
       {!selected && (
         <p className="mb-3 text-center text-lg font-semibold text-slate-300">
-          まずは推しコインを選んでください
+          Select your favorite coin to get started
         </p>
       )}
       <div className="glow rounded-2xl bg-slate-900/80 p-1">
@@ -48,7 +48,7 @@ export default function CoinSelector({ coins, selected, onSelect }: CoinSelector
             placeholder={
               selected
                 ? `${selected.name} (${selected.symbol})`
-                : "コイン名 or シンボルを入力…"
+                : "Enter coin name or symbol..."
             }
             className="w-full rounded-2xl border-2 border-emerald-400/40 bg-slate-950/90 py-5 pl-14 pr-5 text-lg font-medium text-white placeholder-slate-500 outline-none transition-all focus:border-emerald-400 focus:shadow-[0_0_30px_rgba(16,185,129,0.3)]"
           />
@@ -57,14 +57,14 @@ export default function CoinSelector({ coins, selected, onSelect }: CoinSelector
 
       {selected && (
         <p className="mt-2 text-center text-sm text-slate-500">
-          変更するにはもう一度検索してください
+          Search again to change your selection
         </p>
       )}
 
       {open && (
         <div className="panel-border absolute left-0 right-0 z-20 mt-2 max-h-80 overflow-auto rounded-2xl bg-slate-950/95 backdrop-blur">
           {filtered.length === 0 ? (
-            <p className="px-5 py-4 text-sm text-slate-400">該当するコインがありません</p>
+            <p className="px-5 py-4 text-sm text-slate-400">No matching coins found</p>
           ) : (
             filtered.map((coin) => (
               <button

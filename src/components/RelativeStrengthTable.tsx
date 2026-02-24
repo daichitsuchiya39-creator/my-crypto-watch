@@ -72,15 +72,15 @@ export default function RelativeStrengthTable({ assets, oshiSymbol, timeframe }:
     <div className="panel-border overflow-hidden rounded-2xl bg-slate-950/70">
       <div className="border-b border-slate-800 px-4 py-3">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-          詳細比較テーブル
+          Detailed Comparison Table
         </p>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm">
           <thead className="bg-slate-900/60 text-xs uppercase tracking-[0.2em] text-slate-400">
             <tr>
-              <th className="px-4 py-3 text-left">銘柄</th>
-              <th className="px-4 py-3 text-right">価格</th>
+              <th className="px-4 py-3 text-left">Asset</th>
+              <th className="px-4 py-3 text-right">Price</th>
               {TIMEFRAMES.map((tf) => (
                 <th key={tf} className="px-4 py-3 text-right">
                   <button type="button" onClick={() => onSort(tf)} className="hover:text-white">
@@ -90,7 +90,7 @@ export default function RelativeStrengthTable({ assets, oshiSymbol, timeframe }:
               ))}
               <th className="px-4 py-3 text-right">
                 <button type="button" onClick={() => onSort("rpd")} className="hover:text-white">
-                  相対強度
+                  Rel. Strength
                 </button>
               </th>
             </tr>
@@ -123,7 +123,7 @@ export default function RelativeStrengthTable({ assets, oshiSymbol, timeframe }:
                     );
                   })}
                   <td className={`px-4 py-3 text-right font-semibold ${isOshi ? "text-slate-400" : rpd >= 0 ? "text-emerald-300" : "text-rose-300"}`}>
-                    {isOshi ? "基準" : `${rpd.toFixed(2)}%`}
+                    {isOshi ? "Baseline" : `${rpd.toFixed(2)}%`}
                   </td>
                 </tr>
               );
